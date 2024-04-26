@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #5f6e8b;
+}
+
+.mat-padding {
+    padding: 22px;
+
+    &.pb-0 {
+        padding-bottom: 0;
+    }
+}
+
+.mat-mdc-table {
+    .mat-mdc-header-row {
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    .mdc-data-table__cell,
+    .mdc-data-table__header-cell {
+        padding: 0 25px;
+    }
+}
+
+.mat-table-card {
+    background-color: #3e485d;
+}
+
+.mat-mdc-form-field {
+    color: rgb(128, 202, 87);
+
+    ::-webkit-input-placeholder {
+        color: #fff !important;
+        opacity: 0.7 !important;
+    }
+
+    ::-moz-placeholder {
+        color: #fff !important;
+        opacity: 0.7 !important;
+    }
+
+    :-ms-input-placeholder {
+        color: #fff !important;
+        opacity: 0.7 !important;
+    }
+
+    :-moz-placeholder {
+        color: #fff !important;
+        opacity: 0.7 !important;
+    }
+
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: transparent;
+
+        .mdc-text-field__input {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .mdc-line-ripple {
+            &::before {
+                border-bottom-color: rgba(255, 255, 255, 0.7) !important;
+            }
+
+            &::after {
+                border-bottom-color: rgba(255, 255, 255, 1) !important;
+            }
+        }
+    }
+}
+
+
+
+.mat-mdc-paginator-outer-container {
+    color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mat-mdc-paginator-container {
+    --mat-paginator-container-size: 72px;
+    min-height: var(--mat-paginator-container-size);
+
+    .mat-mdc-text-field-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mdc-notched-outline__trailing,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__leading {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+    }
+}

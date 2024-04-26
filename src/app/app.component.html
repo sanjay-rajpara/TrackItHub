@@ -1,0 +1,55 @@
+<div class="mat-padding">
+  <div class="mat-elevation-z8 mat-table-card">
+    <div class="mat-padding pb-0">
+      <mat-form-field appearance="fill" color="primary">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput placeholder="Filter">
+        <mat-icon matSuffix>close</mat-icon>
+      </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="league">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by League"> League </th>
+        <td mat-cell *matCellDef="let element"> {{element.league}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="player">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Player"> Player </th>
+        <td mat-cell *matCellDef="let element"> {{element.player}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="paymentDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Payment Date"> Payment
+          Date
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.paymentDate}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="paid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Paid"> Paid </th>
+        <td mat-cell *matCellDef="let element"> {{element.paid}} </td>
+      </ng-container>
+
+      <!-- Comp Column -->
+      <ng-container matColumnDef="comp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Comp."> Comp. </th>
+        <td mat-cell *matCellDef="let element"> {{element.comp}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [showFirstLastButtons]="false" [pageSizeOptions]="[4, 8, 16]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</div>
